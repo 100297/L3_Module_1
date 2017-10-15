@@ -53,29 +53,41 @@ public class Algorithms {
 		return a;
 
 	}
-public static boolean containsSOS(List<String> message1) {
-	boolean SOS = false;
-	for (int i = 0; i < message1.size(); i++) {
-		System.out.println(message1.get(i));
-		if(message1.get(i).equals( " ... --- ... ")) {
-			
-			SOS = true;
-		}
-	}
-	return SOS;
-}
 
-public static List<String> sortScores(List<Double> results) {
-	for (int i2 = 0; i2 < results.size(); i2++) {
-		
-	
-	for (int i = 0; i < results.size(); i++) {
-		if(results.get(i) > results.get(i+1)) {
-			String t = results.get(i);
-			
+	public static boolean containsSOS(List<String> message1) {
+		boolean SOS = false;
+		for (int i = 0; i < message1.size(); i++) {
+			System.out.println(message1.get(i));
+			if (message1.get(i).equals(" ... --- ... ")) {
+
+				SOS = true;
+			}
 		}
-		}}
-	return results;
-}
+		return SOS;
+	}
+
+	public static List<Double> sortScores(List<Double> results) {
+		for (int i2 = 0; i2 < results.size(); i2++) {
+
+			for (int i = i2+1; i < results.size(); i++) {
+				 
+					if (results.get(i2) > results.get(i)) {
+					 double temp = results.get(i);
+						results.set(i, results.get(i2));
+					results.set(i2, temp);
+						 
+					
+					}
+				
+					
+				}
+			}
+		System.out.println(results);
+		return results;	
+	}
+
+		
+
+	
 
 }
